@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   db:
     # Molde oficial que o docker vai baixar da internet.
@@ -9,7 +7,7 @@ services:
     restart: always
     ports:
       # Conecta a porta do nosso .env à porta 5432 do container, cedendo acesso à rede interna do container para a api.
-      - "${DB_PORT}:5432"
+      - '${DB_PORT}:5432'
     environment:
       # Injeta as credenciais do banco lidas do .env, garantindo a segurança ao não expor dados sensíveis no código.
       POSTGRES_USER: ${DB_USERNAME}
@@ -19,5 +17,6 @@ services:
       # Espelhamento de dados: garante que o cadastro dos jogadores não seja apagado se o container for desligado.
       - postgres_data:/var/lib/postgresql/data
 # o Docker gerenciar o armazenamento automaticamente:
+
 volumes:
-  postgres_data:  
+  postgres_data:

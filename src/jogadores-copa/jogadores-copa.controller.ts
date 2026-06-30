@@ -1,4 +1,12 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+} from '@nestjs/common';
 import { JogadoresCopaService } from './jogadores-copa.service';
 import { CreateJogadoresCopaDto } from './dto/create-jogadores-copa.dto';
 import { UpdateJogadoresCopaDto } from './dto/update-jogadores-copa.dto';
@@ -23,7 +31,10 @@ export class JogadoresCopaController {
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateJogadoresCopaDto: UpdateJogadoresCopaDto) {
+  update(
+    @Param('id') id: string,
+    @Body() updateJogadoresCopaDto: UpdateJogadoresCopaDto,
+  ) {
     return this.jogadoresCopaService.update(+id, updateJogadoresCopaDto);
   }
 
