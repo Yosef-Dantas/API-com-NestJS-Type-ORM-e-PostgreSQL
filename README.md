@@ -1,98 +1,333 @@
 <p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
+  <a href="https://nestjs.com" target="_blank">
+    <img src="https://nestjs.com/img/logo-small.svg" width="120" alt="NestJS Logo" />
+  </a>
 </p>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+<h1 align="center">CRUD REST API with NestJS, TypeORM & PostgreSQL</h1>
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
+<p align="center">
+A RESTful API developed with <strong>NestJS</strong>, <strong>TypeORM</strong>, and <strong>PostgreSQL</strong>, featuring complete CRUD operations, automatic API documentation with Swagger, environment variable configuration, and Docker integration.
 </p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Description
+---
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+# 📖 Project Description
 
-## Project setup
+This project was developed as part of a backend programming assignment.
 
-```bash
-$ npm install
+The application provides a complete REST API for managing data using the CRUD (Create, Read, Update, Delete) pattern. The API was built following NestJS best practices, using TypeORM for database access and PostgreSQL for data persistence.
+
+The project also includes:
+
+- Dockerized PostgreSQL database
+- Environment variable configuration
+- Data validation using DTOs
+- Automatic API documentation with Swagger/OpenAPI
+- Layered architecture following NestJS standards
+
+---
+
+# 🚀 Technologies
+
+- Node.js
+- NestJS
+- TypeScript
+- PostgreSQL
+- TypeORM
+- Docker & Docker Compose
+- Swagger (OpenAPI)
+- Class Validator
+- Class Transformer
+- dotenv
+
+---
+
+# 📁 Project Structure
+
+```
+src/
+│
+├── jogadores-copa/
+│   ├── dto/
+│   ├── entities/
+│   ├── jogadores-copa.controller.ts
+│   ├── jogadores-copa.service.ts
+│   └── jogadores-copa.module.ts
+│
+├── app.module.ts
+├── main.ts
+└── ...
 ```
 
-## Compile and run the project
+---
+
+# ⚙️ Requirements
+
+Before running this project, install:
+
+- Node.js 20+
+- npm
+- Docker Desktop
+- Git
+
+---
+
+# 📦 Installation
+
+Clone the repository:
 
 ```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+git clone <repository-url>
 ```
 
-## Run tests
+Enter the project folder:
 
 ```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+cd project-name
 ```
 
-## Deployment
-
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
-
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
+Install dependencies:
 
 ```bash
-$ npm install -g @nestjs/mau
-$ mau deploy
+npm install
 ```
 
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+---
 
-## Resources
+# 🔐 Environment Variables
 
-Check out a few resources that may come in handy when working with NestJS:
+Create a `.env` file in the project root.
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+Example:
 
-## Support
+```env
+APP_PORT=3000
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+DB_HOST=localhost
+DB_PORT=5432
+DB_USERNAME=postgres
+DB_PASSWORD=postgres
+DB_DATABASE=crud_db
+```
 
-## Stay in touch
+A `.env.example` file is also included as a template.
 
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+---
 
-## License
+# 🐳 Running PostgreSQL with Docker
 
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+Start the database:
+
+```bash
+docker compose up -d
+```
+
+Verify the container:
+
+```bash
+docker ps
+```
+
+Stop the database:
+
+```bash
+docker compose down
+```
+
+---
+
+# ▶️ Running the Application
+
+Development mode:
+
+```bash
+npm run start
+```
+
+Watch mode:
+
+```bash
+npm run start:dev
+```
+
+Production mode:
+
+```bash
+npm run start:prod
+```
+
+---
+
+# 📚 Swagger Documentation
+
+After starting the application, open:
+
+```
+http://localhost:3000/api/jogos
+```
+
+Swagger provides:
+
+- Endpoint documentation
+- Request body examples
+- Response schemas
+- Interactive endpoint testing
+
+---
+
+# 🔄 CRUD Endpoints
+
+The API provides the following endpoints:
+
+| Method | Endpoint | Description |
+|---------|----------|-------------|
+| POST | `/jogadores-copa` | Create a new player |
+| GET | `/jogadores-copa` | Retrieve all players |
+| GET | `/jogadores-copa/:id` | Retrieve a player by ID |
+| PATCH | `/jogadores-copa/:id` | Update an existing player |
+| DELETE | `/jogadores-copa/:id` | Delete a player |
+
+---
+
+# 📄 Example Requests
+
+## Create
+
+```http
+POST /jogadores-copa
+```
+
+```json
+{
+  "nome": "Lionel Messi",
+  "posicao": "Ponta Direita",
+  "idade": 39,
+  "numero_da_camisa": 10,
+  "jogos":1160,
+  "gols": 918,
+  "assistencias": 400,
+  "nacionalidade": "Argentino",
+  "clube": "Inter Miami",
+  "valor": "15 milhões",
+  "moeda": "USD"
+}
+```
+
+---
+
+## Get All
+
+```http
+GET /jogadores-copa
+```
+
+---
+
+## Get by ID
+
+```http
+GET /jogadores-copa/1
+```
+
+---
+
+## Update
+
+```http
+PATCH /jogadores-copa/1
+```
+
+```json
+{
+  "clube": "Barcelona",
+  "valor": "20 milhões"
+}
+```
+
+---
+
+## Delete
+
+```http
+DELETE /jogadores-copa/1
+```
+
+---
+
+# ✅ Features
+
+- RESTful API
+- CRUD operations
+- PostgreSQL integration
+- TypeORM ORM
+- DTO validation
+- Global Validation Pipe
+- Environment variables
+- Docker support
+- Swagger documentation
+- Modular architecture
+- Error handling
+- Clean and scalable code
+
+---
+
+# 🧪 Running Tests
+
+Unit tests
+
+```bash
+npm run test
+```
+
+End-to-end tests
+
+```bash
+npm run test:e2e
+```
+
+Coverage
+
+```bash
+npm run test:cov
+```
+
+---
+
+# 📌 Development Notes
+
+This project follows the recommended NestJS architecture:
+
+- Controllers handle HTTP requests.
+- Services implement business logic.
+- DTOs validate incoming data.
+- Entities map database tables.
+- TypeORM manages persistence.
+- PostgreSQL stores application data.
+- Swagger automatically documents the API.
+
+---
+
+# 📖 Useful Resources
+
+- NestJS Documentation: https://docs.nestjs.com
+- TypeORM Documentation: https://typeorm.io
+- PostgreSQL Documentation: https://www.postgresql.org
+- Docker Documentation: https://docs.docker.com
+- Swagger/OpenAPI: https://swagger.io
+
+---
+
+# 👨‍💻 Author
+
+Developed by **Yosef Faustiny Dantas Silva**
+
+Backend Development Assignment using NestJS, TypeORM and PostgreSQL.
+
+---
+
+# 📄 License
+
+This project is intended for educational purposes.
+
+Built with ❤️ using NestJS.

@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  db:
+    # Molde oficial que o docker vai baixar da internet.
+    image: postgres:15
+    # Nome do container.
+    container_name: db_jogadores_copa
+    restart: always
+    ports:
+      # Conecta a porta do nosso .env à porta 5432 do container, cedendo acesso à rede interna do container para a api.
+      - "${DB_PORT}:5432"
+    environment:
+      # Injeta as credenciais do banco lidas do .env, garantindo a segurança ao não expor dados sensíveis no código.
+      POSTGRES_USER: ${DB_USERNAME}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_DATABASE}
+    volumes:
+      # Espelhamento de dados: garante que o cadastro dos jogadores não seja apagado se o container for desligado.
+      - postgres_data:/var/lib/postgresql/data
+# o Docker gerenciar o armazenamento automaticamente:
+volumes:
+  postgres_data:  

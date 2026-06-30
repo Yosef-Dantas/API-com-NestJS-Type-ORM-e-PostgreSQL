@@ -1,0 +1,58 @@
+{
+  "info": {
+    "_postman_id": "7648b77b-4921-4119-b3ef-63914a217445",
+    "name": "API Jogadores da COPA",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "56014968",
+    "_collection_link": "https://go.postman.co/collection/56014968-7648b77b-4921-4119-b3ef-63914a217445?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Listar Jogadores (GET)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/jogadores-copa",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "jogadores-copa"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Criar Jogador (POST)",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"nome\": \"Lionel Messi\",\r\n    \"posicao\": \"Ponta Direita\",\r\n    \"idade\": 39,\r\n    \"numero_da_camisa\": 10,\r\n    \"jogos\":1160,\r\n    \"gols\": 918,\r\n    \"assistencias\": 400,\r\n    \"nacionalidade\": \"Argentino\",\r\n    \"clube\": \"Inter Miami\",\r\n    \"valor\": \"15 milhões\",\r\n    \"moeda\": \"USD\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/jogadores-copa",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "jogadores-copa"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
