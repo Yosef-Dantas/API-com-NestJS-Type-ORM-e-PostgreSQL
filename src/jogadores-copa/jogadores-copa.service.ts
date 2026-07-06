@@ -1,4 +1,4 @@
-import { HttpException, Injectable, NotFoundException } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { CreateJogadoresCopaDto } from './dto/create-jogadores-copa.dto';
 import { UpdateJogadoresCopaDto } from './dto/update-jogadores-copa.dto';
@@ -26,8 +26,16 @@ export class JogadoresCopaService {
   }
 
   // Busca e retorna apenas um jogador específico baseado no seu identificador
-  async findOne(id: number) {
-    const jogador = await this.jogadoresRepository.findOneBy({ id });
+  async findOne(id: string) {
+    // Busca o jogador pelo id.
+    // O bloco 'relations' faz os JOINs automáticos para puxar as peças conectadas junto com o registro principal.
+    const jogador = await this.jogadoresRepository.findOne({
+      where: { id },
+      relations: {
+        titulos: true,
+        patrocinadores: true,
+      },
+    });
 
     if (!jogador) {
       throw new NotFoundException('Jogador não encontrado.');
@@ -35,8 +43,8 @@ export class JogadoresCopaService {
     return jogador;
   }
 
-  async update(id: number, updateJogadoresCopaDto: UpdateJogadoresCopaDto) {
-    const jogador = await this.jogadoresRepository.findBy({ id });
+  async update(id: string, updateJogadoresCopaDto: UpdateJogadoresCopaDto) {
+    const jogador = await this.jogadoresRepository.findOneBy({ id });
 
     if (!jogador) {
       throw new NotFoundException('Jogador não encontrado.');
@@ -47,10 +55,10 @@ export class JogadoresCopaService {
     return this.findOne(id);
   }
 
-  async remove(id: number) {
-    const jogador = await this.jogadoresRepository.findBy({ id });
+  async remove(id: string) {
+    const jogador = await this.jogadoresRepository.findOneBy({ id });
 
-    if (!jogador[0]) {
+    if (!jogador) {
       throw new NotFoundException('Jogador não encontrado.');
     }
 

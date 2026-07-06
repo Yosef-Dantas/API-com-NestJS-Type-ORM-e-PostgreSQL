@@ -17,6 +17,11 @@ A RESTful API developed with <strong>NestJS</strong>, <strong>TypeORM</strong>, 
 This project was developed as part of a backend programming assignment.
 
 The application provides a complete REST API for managing data using the CRUD (Create, Read, Update, Delete) pattern. The API was built following NestJS best practices, using TypeORM for database access and PostgreSQL for data persistence.
+A key highlight of this API is its Relational Database Design, efficiently handling:
+
+-One-to-One (1:1): Player to Medical Data (Dados Médicos).
+-One-to-Many (1:N): Player to Titles (Títulos).
+-Many-to-Many (N:N): Players to Sponsors (Patrocinadores).
 
 The project also includes:
 
@@ -48,12 +53,10 @@ The project also includes:
 ```
 src/
 │
-├── jogadores-copa/
-│   ├── dto/
-│   ├── entities/
-│   ├── jogadores-copa.controller.ts
-│   ├── jogadores-copa.service.ts
-│   └── jogadores-copa.module.ts
+├── jogadores-copa/       # Main module (Players)
+├── dados-medicos/        # 1:1 Relation module
+├── titulos/              # 1:N Relation module
+├── patrocinador/         # N:N Relation module
 │
 ├── app.module.ts
 ├── main.ts
@@ -180,13 +183,13 @@ Swagger provides:
 
 The API provides the following endpoints:
 
-| Method | Endpoint | Description |
-|---------|----------|-------------|
-| POST | `/jogadores-copa` | Create a new player |
-| GET | `/jogadores-copa` | Retrieve all players |
-| GET | `/jogadores-copa/:id` | Retrieve a player by ID |
-| PATCH | `/jogadores-copa/:id` | Update an existing player |
-| DELETE | `/jogadores-copa/:id` | Delete a player |
+| Method | Endpoint              | Description               |
+| ------ | --------------------- | ------------------------- |
+| POST   | `/jogadores-copa`     | Create a new player       |
+| GET    | `/jogadores-copa`     | Retrieve all players      |
+| GET    | `/jogadores-copa/:id` | Retrieve a player by ID   |
+| PATCH  | `/jogadores-copa/:id` | Update an existing player |
+| DELETE | `/jogadores-copa/:id` | Delete a player           |
 
 ---
 
@@ -204,13 +207,27 @@ POST /jogadores-copa
   "posicao": "Ponta Direita",
   "idade": 39,
   "numero_da_camisa": 10,
-  "jogos":1160,
+  "jogos": 1160,
   "gols": 918,
   "assistencias": 400,
   "nacionalidade": "Argentino",
   "clube": "Inter Miami",
   "valor": "15 milhões",
   "moeda": "USD"
+}
+```
+
+```http
+POST /patrocinador
+```
+
+```json
+{
+  "nome_da_marca": "Nike",
+  "ramo_de_atividade": "Material Esportivo",
+  "valor": 5000000,
+  "data_de_expiracao": "2030",
+  "jogadoresIds": ["uuid-jogador-1", "uuid-jogador-2"]
 }
 ```
 

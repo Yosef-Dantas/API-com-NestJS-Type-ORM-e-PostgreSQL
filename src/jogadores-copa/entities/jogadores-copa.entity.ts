@@ -1,17 +1,20 @@
 import {
   Entity,
-  PrimaryGeneratedColumn,
   Column,
-  CreateDateColumn,
-  UpdateDateColumn,
+  JoinColumn,
+  OneToOne,
+  OneToMany,
+  ManyToMany,
+  JoinTable,
 } from 'typeorm';
+import { BaseEntity } from '../../shared/entities/base.entity';
+import { DadosMedicos } from '../../dados-medicos/entities/dados-medico.entity';
+import { Titulo } from '../../titulos/entities/titulo.entity';
+import { Patrocinador } from '../../patrocinador/entities/patrocinador.entity';
 
 // Avisando ao banco o nome da tabela
 @Entity('jogadores_copa')
-export class JogadoresCopa {
-  // Cria a coluna de ID e gera a numeração automaticamente.
-  @PrimaryGeneratedColumn()
-  id!: number;
+export class JogadoresCopa extends BaseEntity {
   // Transforma a variável logo abaixo dela em uma coluna comum da tabela.
   @Column({ length: 40 })
   // Afirmação de Atribuição Definitiva(!), além de algumas condições necessárias para preencimento da tabela.
@@ -47,11 +50,22 @@ export class JogadoresCopa {
   @Column({ length: 3, default: 'EUR' })
   moeda!: string;
 
-  // Anota a data e a hora que foi criado.
-  @CreateDateColumn()
-  createdAt!: Date;
-
-  // Atualiza a data e a hora que foi atualizado.
-  @UpdateDateColumn()
-  updatedAt!: Date;
+  //'cascade' permite criar a ficha junto com o jogador, 'eager' permite puxar esses dados nas buscas, e 'onDelete' destrói a ficha se o jogador for deletado.
+  @OneToOne(() => DadosMedicos, (dados) => dados.jogador, {
+    cascade: true,
+    eager: true,
+    onDelete: 'CASCADE',
+  })
+  // O '@JoinColumn' crava a chave estrangeira nesta tabela.
+  @JoinColumn()
+  dadosMedicos!: DadosMedicos;
+  //O 'cascade: false' indica que a criação e gestão dos títulos são feitas em rotas independentes.
+  @OneToMany(() => Titulo, (titulo) => titulo.jogador, {
+    cascade: false,
+  })
+  titulos!: Titulo[];
+  //O @JoinTable cria a tabela oculta que cruza múltiplos jogadores com múltiplos patrocinadores.
+  @ManyToMany(() => Patrocinador, (patrocinador) => patrocinador.jogadores)
+  @JoinTable()
+  patrocinadores!: Patrocinador[];
 }

@@ -8,51 +8,373 @@
   },
   "item": [
     {
-      "name": "Listar Jogadores (GET)",
-      "request": {
-        "method": "GET",
-        "header": [],
-        "url": {
-          "raw": "http://localhost:3000/jogadores-copa",
-          "protocol": "http",
-          "host": [
-            "localhost"
-          ],
-          "port": "3000",
-          "path": [
-            "jogadores-copa"
-          ]
+      "name": "Jogadores",
+      "item": [
+        {
+          "name": "Criar Jogador (POST)",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nome\": \"Ángel Di María\",\r\n    \"posicao\": \"Ponta Direita\",\r\n    \"idade\": 36,\r\n    \"numero_da_camisa\": 11,\r\n    \"jogos\": 750,\r\n    \"gols\": 178,\r\n    \"assistencias\": 260,\r\n    \"nacionalidade\": \"Argentino\",\r\n    \"clube\": \"Benfica\",\r\n    \"valor\": 4000000,\r\n    \"moeda\": \"EUR\",\r\n    \"dadosMedicos\": {\r\n        \"peso\": 75.0,\r\n        \"altura\": 1.80,\r\n        \"atributos_fisicos\": \"Resistência e Agilidade\",\r\n        \"aspectos_psicologicos\": \"Decisivo em Finais\",\r\n        \"anos_jogados\": \"19 anos\",\r\n        \"numero_de_lesoes\": \"4 lesões\",\r\n        \"status\": \"Ativo\",\r\n        \"tempo_para_retorno\": \"0\"\r\n    }\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/jogadores-copa",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "jogadores-copa"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Lista Jogadores (GET)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/jogadores-copa",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "jogadores-copa"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Listar Jogador (GET)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/jogadores-copa/:id",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "jogadores-copa",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "577217e0-af50-49fe-ab91-938ff0f9b001"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Atualizar Jogadores (PATCH)",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/jogadores-copa/:id",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "jogadores-copa",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Deletar Jogador (DELET)",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/jogadores-copa/:id",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "jogadores-copa",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
         }
-      },
-      "response": []
+      ]
     },
     {
-      "name": "Criar Jogador (POST)",
-      "request": {
-        "method": "POST",
-        "header": [],
-        "body": {
-          "mode": "raw",
-          "raw": "{\r\n    \"nome\": \"Lionel Messi\",\r\n    \"posicao\": \"Ponta Direita\",\r\n    \"idade\": 39,\r\n    \"numero_da_camisa\": 10,\r\n    \"jogos\":1160,\r\n    \"gols\": 918,\r\n    \"assistencias\": 400,\r\n    \"nacionalidade\": \"Argentino\",\r\n    \"clube\": \"Inter Miami\",\r\n    \"valor\": \"15 milhões\",\r\n    \"moeda\": \"USD\"\r\n}",
-          "options": {
-            "raw": {
-              "language": "json"
+      "name": "Títulos",
+      "item": [
+        {
+          "name": "Criar Títulos (POST)",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nome_do_titulo\": \"Copa do Mundo\",\r\n    \"categoria_do_titulo\": \"Seleção\",\r\n    \"ano\": 2022,\r\n    \"jogadorId\": \"577217e0-af50-49fe-ab91-938ff0f9b001\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/titulos",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "titulos"
+              ]
             }
-          }
+          },
+          "response": []
         },
-        "url": {
-          "raw": "http://localhost:3000/jogadores-copa",
-          "protocol": "http",
-          "host": [
-            "localhost"
-          ],
-          "port": "3000",
-          "path": [
-            "jogadores-copa"
-          ]
+        {
+          "name": "Listar Títulos (GET)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/titulos",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "titulos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Listar Título (GET)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/titulos/:id",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "titulos",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Atualizar Título (PATCH)_",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/titulos/:id",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "titulos",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Deletar Título (DELET)",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/titulos/:id",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "titulos",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
         }
-      },
-      "response": []
+      ]
+    },
+    {
+      "name": "Patrocinadores",
+      "item": [
+        {
+          "name": "Criar Patrocinadores (POST)",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nome_da_marca\": \"Adidas\",\r\n    \"ramo_de_atividade\": \"Material Esportivo\",\r\n    \"valor\": 120000000,\r\n    \"data_de_expiracao\": 2028,\r\n    \"jogadoresIds\": [\r\n    \"577217e0-af50-49fe-ab91-938ff0f9b001\"\r\n    ]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/patrocinador",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "patrocinador"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Listar Patrocinadores (GET)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/patrocinador",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "patrocinador"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Lista Patrocinador (GET)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/patrocinador/:id",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "patrocinador",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Atualizar Patrocinador (PATCH)",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/patrocinador/:id",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "patrocinador",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Deletar Patrocinador (DELETE)",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/patrocinador/:id",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "patrocinador",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
     }
   ]
 }

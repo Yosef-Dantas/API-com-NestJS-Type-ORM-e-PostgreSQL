@@ -1,5 +1,12 @@
-import { IsInt, IsNotEmpty, IsOptional, IsString } from 'class-validator';
-import { Transform } from 'class-transformer';
+import {
+  IsInt,
+  IsNotEmpty,
+  IsOptional,
+  IsString,
+  ValidateNested,
+} from 'class-validator';
+import { Transform, Type } from 'class-transformer';
+import { CreateDadosMedicoDto } from '../../dados-medicos/dto/create-dados-medico.dto';
 
 // DTO responsável por definir e validar os dados necessários para o cadastro de um jogador da Copa.
 export class CreateJogadoresCopaDto {
@@ -63,7 +70,7 @@ export class CreateJogadoresCopaDto {
     }
 
     // Se já chegou como número puro, passa direto
-    return value;
+    return Number(value);
   })
   @IsInt()
   @IsOptional()
@@ -72,4 +79,9 @@ export class CreateJogadoresCopaDto {
   @IsString()
   @IsOptional()
   moeda!: string;
+
+  @IsOptional()
+  @ValidateNested()
+  @Type(() => CreateDadosMedicoDto)
+  dadosMedicos!: CreateDadosMedicoDto;
 }

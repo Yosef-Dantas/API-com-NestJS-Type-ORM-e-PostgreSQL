@@ -27,7 +27,7 @@ export class JogadoresCopaController {
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.jogadoresCopaService.findOne(+id);
+    return this.jogadoresCopaService.findOne(id);
   }
 
   @Patch(':id')
@@ -35,11 +35,11 @@ export class JogadoresCopaController {
     @Param('id') id: string,
     @Body() updateJogadoresCopaDto: UpdateJogadoresCopaDto,
   ) {
-    return this.jogadoresCopaService.update(+id, updateJogadoresCopaDto);
+    return this.jogadoresCopaService.update(id, updateJogadoresCopaDto);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.jogadoresCopaService.remove(+id);
+    return this.jogadoresCopaService.remove(id);
   }
 }

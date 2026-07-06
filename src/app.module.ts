@@ -4,6 +4,9 @@ import { ConfigModule } from '@nestjs/config';
 // Importação do TypeORM para comunicação com o banco PostgreSQL.
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { JogadoresCopaModule } from './jogadores-copa/jogadores-copa.module';
+import { DadosMedicosModule } from './dados-medicos/dados-medicos.module';
+import { TitulosModule } from './titulos/titulos.module';
+import { PatrocinadorModule } from './patrocinador/patrocinador.module';
 
 @Module({
   imports: [
@@ -31,8 +34,9 @@ import { JogadoresCopaModule } from './jogadores-copa/jogadores-copa.module';
       }),
     }),
     JogadoresCopaModule,
+    DadosMedicosModule,
+    TitulosModule,
+    PatrocinadorModule,
   ],
-  controllers: [],
-  providers: [],
 })
 export class AppModule {}

@@ -13,11 +13,11 @@ export abstract class BaseEntity {
   id?: string;
 
   @CreateDateColumn()
-  createdAt: Date; //cammel case: NomeDaFuncao
+  createdAt!: Date; //cammel case: NomeDaFuncao
 
   @UpdateDateColumn()
-  updateAt: Date;
+  updateAt!: Date;
 
   @DeleteDateColumn()
-  deletedAt: Date;
+  deletedAt!: Date;
 }
