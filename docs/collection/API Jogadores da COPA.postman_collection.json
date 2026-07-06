@@ -70,7 +70,7 @@
               "variable": [
                 {
                   "key": "id",
-                  "value": "577217e0-af50-49fe-ab91-938ff0f9b001"
+                  "value": "3f5f2ddf-a612-4eda-a3dc-4922198e0bd0"
                 }
               ]
             }
@@ -127,7 +127,7 @@
               "variable": [
                 {
                   "key": "id",
-                  "value": ""
+                  "value": "3f5f2ddf-a612-4eda-a3dc-4922198e0bd0"
                 }
               ]
             }
@@ -146,7 +146,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n    \"nome_do_titulo\": \"Copa do Mundo\",\r\n    \"categoria_do_titulo\": \"Seleção\",\r\n    \"ano\": 2022,\r\n    \"jogadorId\": \"577217e0-af50-49fe-ab91-938ff0f9b001\"\r\n}",
+              "raw": "{\r\n    \"nome_do_titulo\": \"Copa do Mundo\",\r\n    \"categoria_do_titulo\": \"Seleção\",\r\n    \"ano\": 2022,\r\n    \"jogadorId\": \"3f5f2ddf-a612-4eda-a3dc-4922198e0bd0\"\r\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -266,7 +266,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n    \"nome_da_marca\": \"Adidas\",\r\n    \"ramo_de_atividade\": \"Material Esportivo\",\r\n    \"valor\": 120000000,\r\n    \"data_de_expiracao\": 2028,\r\n    \"jogadoresIds\": [\r\n    \"577217e0-af50-49fe-ab91-938ff0f9b001\"\r\n    ]\r\n}",
+              "raw": "{\r\n    \"nome_da_marca\": \"Adidas\",\r\n    \"ramo_de_atividade\": \"Material Esportivo\",\r\n    \"valor\": 120000000,\r\n    \"data_de_expiracao\": 2028,\r\n    \"jogadoresIds\": [\r\n    \"3f5f2ddf-a612-4eda-a3dc-4922198e0bd0\"\r\n    ]\r\n}",
               "options": {
                 "raw": {
                   "language": "json"
