@@ -4,11 +4,11 @@ import { JogadoresCopa } from '../../jogadores-copa/entities/jogadores-copa.enti
 
 @Entity('titulos')
 export class Titulo extends BaseEntity {
-  @Column({ type: 'text' })
-  nome_do_titulo!: string;
+  @Column({ type: 'text', default: 'Não Foi Informado' })
+  nomeDoTitulo!: string;
 
-  @Column({ type: 'text' })
-  categoria_do_titulo!: string;
+  @Column({ type: 'text', default: 'Não Foi Informado' })
+  categoriaDoTitulo!: string;
 
   @Column({ type: 'int' })
   ano!: number;

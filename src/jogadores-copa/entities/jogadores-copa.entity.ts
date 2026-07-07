@@ -16,18 +16,18 @@ import { Patrocinador } from '../../patrocinador/entities/patrocinador.entity';
 @Entity('jogadores_copa')
 export class JogadoresCopa extends BaseEntity {
   // Transforma a variável logo abaixo dela em uma coluna comum da tabela.
-  @Column({ length: 40 })
+  @Column({ length: 40, default: 'Não Foi Informado' })
   // Afirmação de Atribuição Definitiva(!), além de algumas condições necessárias para preencimento da tabela.
   nome!: string;
 
-  @Column({ length: 20 })
+  @Column({ length: 20, default: 'Não Foi Informado' })
   posicao!: string;
 
-  @Column('int')
+  @Column({ type: 'int', default: 0 })
   idade!: number;
 
   @Column({ type: 'int', default: 0 })
-  numero_da_camisa!: number;
+  numeroDaCamisa!: number;
 
   @Column({ type: 'int', default: 0 })
   jogos!: number;

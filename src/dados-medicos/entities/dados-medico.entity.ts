@@ -14,23 +14,23 @@ export class DadosMedicos extends BaseEntity {
   @Column({ type: 'decimal', precision: 5, scale: 2, nullable: true })
   peso!: number;
 
-  @Column({ type: 'text' })
-  atributos_fisicos!: string;
+  @Column({ type: 'text', default: 'Não Foi Informado' })
+  atributosFisicos!: string;
 
-  @Column({ type: 'text' })
-  aspectos_psicologicos!: string;
-
-  @Column({ type: 'int', nullable: true, default: 0 })
-  anos_jogados!: number;
+  @Column({ type: 'text', default: 'Não Foi Informado' })
+  aspectosPsicologicos!: string;
 
   @Column({ type: 'int', nullable: true, default: 0 })
-  numero_de_lesoes!: number;
+  anosJogados!: number;
+
+  @Column({ type: 'int', nullable: true, default: 0 })
+  numeroDeLesoes!: number;
 
   @Column({ type: 'text', nullable: true })
   status!: string;
 
-  @Column({ type: 'int', nullable: true, default: 0 })
-  tempo_para_retorno!: number;
+  @Column({ type: 'int', nullable: true })
+  diasParaRetorno!: number;
 
   // Conexão que liga a tabela dos dados médicos à tabela do jogador.
   @OneToOne(() => JogadoresCopa, (jogador) => jogador.dadosMedicos)
